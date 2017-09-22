@@ -1,0 +1,34 @@
+extends ../layout
+block content
+    html
+    h1 Guardar programmers
+
+
+    form(method="post", action="#{action}")
+     label Nombre
+     br
+     input(type="text", name="nombre", required="required", value="#{programmers.apellido}")
+     br
+     label Apellido
+     br 
+     input(type="text", name="apellido", required="required", value="#{programmers.apellido}")  
+     br
+     label User
+     br
+     input(type="text", name="user", required="required", value="#{programmers.user}")
+     br
+     label Password
+     br
+     input(type="text", name="pass", required="required", value="#{programmers.pass}")
+     br   
+     label Informacion
+     br
+     textarea(name="informacion", cols="50", row="5", required="required") #{programmers.informacion}
+     br
+     input( class="btn waves-effect waves-light blue darken-1", type="submit", value="Guardar") 
+     br
+     br 
+    form(class="s10" action="/app/programmers" method="GET")
+      button(class="btn waves-effect waves-light blue darken-1" type="submit" value="Volver") Cancelar 
+     
+        

@@ -1,0 +1,38 @@
+extends ../layout
+block content
+  html
+
+
+
+  h1 Programmers
+  p  
+     form(action="/app/programmers/create" method="GET") 
+      button(class="btn waves-effect waves-light blue darken-1" type="submit" value="Volver") Crear Nuevo Programmers
+     
+    if (programmers.lenght > 0)
+  table.bordered 
+    thead
+      tr
+        th Nombre
+        th Apellido
+        th Usuario
+        th Contraseña
+        th
+        th  
+    tbody
+    each item in programmers
+         tr
+          td #{item.nombre}
+          td #{item.apellido}
+          td #{item.user}
+          td #{item.pass} 
+          td
+           a(href="/app/programmers/#{item.id}") Ver
+          td
+           a(href="/app/programmers/#{item._id}/edit") Editar
+          td
+          td
+           form(method="post", action="/app/programmers/delete/#{item._id}")
+             a(href="javascript:void(0);", onclick="if(confirm('¿Esta seguro que desea eliminar este registro?')){this.parentNode.submit();}") Eliminar  
+    else       
+           p no existe

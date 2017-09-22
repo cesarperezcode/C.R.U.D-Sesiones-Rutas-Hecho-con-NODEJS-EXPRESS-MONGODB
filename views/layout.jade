@@ -1,0 +1,19 @@
+doctype
+html
+    head
+        title= title
+        meta(charset="utf-8")
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    body
+        nav
+            div.nav-wrapper.red.darken-2
+             a(href="#" class="brand-logo") CRUD Y SESSION - NODE.JS/EXPRESS
+             if(session != 'close')
+              ul(id="nav-mobile" class="right hide-on-med-and-down")
+                 li
+                  a #{user} 
+                 li
+                  a(href="/app/close") Cerrar Sesion
+        block content

@@ -1,0 +1,11 @@
+extends ../layout
+block content
+
+    h1 #{programmers.nombre} #{programmers.apellido}
+    div #{programmers.informacion}
+    br
+    <div class="row">
+    <div class="col s2"></div>
+    form(action="/app/programmers" method="GET")
+     button(class="btn waves-effect waves-light blue darken-1" type="submit" value="Volver") Volver 
+    </div>
